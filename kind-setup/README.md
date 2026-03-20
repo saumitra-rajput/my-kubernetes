@@ -1,0 +1,1 @@
+On-windows directory has the setps to setup kind on windows machine
