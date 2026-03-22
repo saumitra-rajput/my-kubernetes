@@ -1,0 +1,8 @@
+# this is our first namespace manifest file
+
+
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: nginx
+
