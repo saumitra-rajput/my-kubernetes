@@ -124,4 +124,26 @@ image set
 
 - IMP you have to delete the pvc first then delete the pv will work
 
+Workflow to follow 
+
+- kubectl apply -f persistentVolume.yml
+- kubectl apply -f persistentVolumeClaim.yml
+- kubectl apply -f deployment.yml
+- kubectl get pods -n nginx
+- kubectl get pods -n nginx -o wide # you will which pod is workin on which node
+
+
+## service.yml
+
+- kubectl apply -f service.yml
+- kubectl get all
+- kubectl get all -n nginx
+
+
+## port mapping
+
+- kubectl port-forward service/nginx-service -n nginx 8080:80 --address=0.0.0.0  # i have used port 8080 is non-privlage port
+- ctrl + c # once you hit these key port forwarding will be stop and webpage is gone
+
+
 

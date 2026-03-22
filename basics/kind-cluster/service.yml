@@ -1,0 +1,21 @@
+# this is our first service manifest file
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: nginx-service
+  namespace: nginx
+
+spec:
+  selector:
+      app: nginx
+  ports:
+    - protocol: TCP
+      port: 80  # port where user will reach the page
+      targetPort: 80  # port of your pod
+
+  type: ClusterIP
+
+
+
+
