@@ -1,5 +1,14 @@
 # Basic commands
 
+## default
+
+- kind create cluster --name=jarvis
+- kind get clusters
+- kubectl get nodes
+- kubectl get namespace or kubectl get ns
+- kubectl get pods -n kube-system(name-space)
+- kind delete cluster --name jarvis
+
 ## config.ym
  
 - kind create cluster --name=jarvis --config=config.yml # create cluster using config.yml and define it's name
