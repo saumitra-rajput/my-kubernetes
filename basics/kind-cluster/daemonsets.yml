@@ -1,0 +1,25 @@
+# this is our first DaemonSets manifest file
+
+kind: DaemonSet
+apiVersion: apps/v1
+metadata:
+  name: nginx-daemonset
+  namespace: nginx
+
+spec:
+  selector:
+    matchLabels:
+      app: nginx
+
+  template:
+    metadata:
+      name: nginx-daemon-template
+      labels:
+        app: nginx
+
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:latest
+          ports:
+            - containerPort: 80

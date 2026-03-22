@@ -1,0 +1,25 @@
+# this is our first job manifest file
+
+kind: Job
+apiVersion: batch/v1
+metadata:
+  name: job
+  namespace: nginx
+
+spec:
+  completions: 2
+  parallelism: 1
+
+  template:
+    metadata:
+      name: demo-job-pod
+      namespace: nginx
+      labels:
+        app: batch-task
+    spec:
+      containers:
+        - name: job-pod
+          image: busybox:latest
+          command: [ "sh", "-c", "echo Hello This is K8s job && sleep 15" ]
+      restartPolicy: Never
+

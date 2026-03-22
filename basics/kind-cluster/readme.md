@@ -9,12 +9,14 @@
 - kubectl get pods -n kube-system(name-space)
 - kind delete cluster --name jarvis
 
-  pods (Ensure you have one cluster running)
+pods (Ensure you have one cluster running)
+
 - kubectl cluster-info
 - kubectl run nginx --image=nginx:latest # this will create nginx pod using latest image note you still need to do port mapping to see the webpage
 - kubectl delete pod nginx
 
-  namespace
+namespace
+
 - kubectl create ns nginx
 - kubectl get namespace or kubectl get ns 
 - kubectl run nginx -n nginx
@@ -69,4 +71,28 @@ image set
 
 - kubectl delete -f deployment.yml # delete the deployment
 
+
+## replicasets.yml
+
+- kubectl apply -f replicaset.yml
+- kubectl get pods -n nginx
+- kubectl get replicaset -n nginx
+
+
+## daemonsets.yml
+
+- kubectl apply -f daemonset.yml
+- kubectl get pods -n nginx
+- kubectl get pods -n nginx -o wide # you will see your each work node has one pod daemonsets ensure that each node has a pod and equally distributed DaemonSet → one pod on every node and it do not scale replicas like deploymentsets
+- kubectl delete -f daemonset.yml
+- kubectl get pods -n nginx -o wide
+
+
+## job.yml
+
+- kubectl apply -f job.yml
+- kubectl get pods -n nginx
+- kubectl logs pods/job-xdg8r -n nginx # see the job messages with the pod specific name
+- kubectl get pods -n nginx
+- kubectl delete -f job.yml
 

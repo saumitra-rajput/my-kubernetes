@@ -1,0 +1,26 @@
+# this is our first ReplicaSets manifest file
+
+kind: ReplicaSet
+apiVersion: apps/v1
+metadata:
+  name: nginx-repset
+  namespace: nginx
+
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx
+
+  template:
+    metadata:
+      name: nginx-rep-template
+      labels:
+        app: nginx
+
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:latest
+          ports:
+            - containerPort: 80
