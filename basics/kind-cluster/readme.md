@@ -105,3 +105,21 @@ image set
 - kubectl get pods -n nginx
 - kubectl delete -f cronjob.yml
 - kubectl get pods -n nginx
+
+
+## persistentVolume.yml
+
+- kubectl apply -f persistentVolume.yml
+- kubectl get pv  # you noticed it's free not mapped with ns nginx and Status is available
+
+
+## persistentVolumeClaim.yml
+
+- kubectl get pv # check the pv status is available
+- kubectl apply -f persistentVolumeClaim.yml 
+- kubectl get pv # after apply you have claim it status changed to bound
+- kubectl get pvc # check your pvc 
+
+
+
+

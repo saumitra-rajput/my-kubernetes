@@ -1,0 +1,18 @@
+# this is our first peristentVolume manifest file
+
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: jarvis-pv
+  labels:
+    app: local-pv
+
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: local-storage
+  hostPath:
+    path: /mnt/data
