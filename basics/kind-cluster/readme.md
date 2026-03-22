@@ -96,3 +96,12 @@ image set
 - kubectl get pods -n nginx
 - kubectl delete -f job.yml
 
+
+## cronjob.yml
+
+- kubectl apply -f cronjob.yml
+- kubectl get cronjob -n nginx
+- kubectl logs pod/minute-backup-29569647-z7glk -n nginx
+- kubectl get pods -n nginx
+- kubectl delete -f cronjob.yml
+- kubectl get pods -n nginx
