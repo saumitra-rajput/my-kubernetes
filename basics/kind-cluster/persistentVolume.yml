@@ -4,6 +4,7 @@ kind: PersistentVolume
 apiVersion: v1
 metadata:
   name: jarvis-pv
+  namespace: nginx
   labels:
     app: local-pv
 

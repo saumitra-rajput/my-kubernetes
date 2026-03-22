@@ -111,7 +111,7 @@ image set
 
 - kubectl apply -f persistentVolume.yml
 - kubectl get pv  # you noticed it's free not mapped with ns nginx and Status is available
-
+- kubectl delete pv/nameofpvyouCreated   # this jobs needs pvc deleted first
 
 ## persistentVolumeClaim.yml
 
@@ -119,7 +119,9 @@ image set
 - kubectl apply -f persistentVolumeClaim.yml 
 - kubectl get pv # after apply you have claim it status changed to bound
 - kubectl get pvc # check your pvc 
+- kubectl delete pvc/local-pvc(your-PVC name)
+- kubectl delete -f persistentVolumeClaim.yml
 
-
+- IMP you have to delete the pvc first then delete the pv will work
 
 

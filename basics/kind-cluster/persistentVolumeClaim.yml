@@ -4,6 +4,7 @@ kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
   name: local-pvc
+  namespace: nginx
 
 spec:
   accessModes:
