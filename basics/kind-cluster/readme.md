@@ -2,14 +2,21 @@
 
 ## default
 
-- kind create cluster --name=jarvis
+- kind create cluster --name=jarvis  # creates default cluster
+- kind create cluster --name=jarvis --config=config.yml  # creates cluster as per our config.yml file
+- kind get clusters
+- kubectl cluster-info
+- kubectl cluster-info --context kind-jarvis
+
 - kind get clusters
 - kubectl get nodes
 - kubectl get namespace or kubectl get ns
 - kubectl get pods -n kube-system(name-space)
 - kind delete cluster --name jarvis
+- kubectl get pods -n kube-system
+- kubectl describe pod/kindnet-jt87p -n kube-system
 
-pods (Ensure you have one cluster running)
+pods (Ensure you have one cluster running) smallest running unit of k8s
 
 - kubectl cluster-info
 - kubectl run nginx --image=nginx:latest # this will create nginx pod using latest image note you still need to do port mapping to see the webpage
