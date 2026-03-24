@@ -1,0 +1,15 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: pod-three
+  labels:
+    app: web-pod
+    env: prod
+    role: devops-engineer
+
+spec:
+  containers:
+    - name: web-pods
+      image: nginx:latest
+      ports:
+        - containerPort: 80
