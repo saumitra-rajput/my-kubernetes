@@ -1,0 +1,10 @@
+# this is our ConfigMap file for storing env vars for statefulset file
+
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: mysql-config-map
+  namespace: mysql
+
+data:
+  MYSQL_DATABASE: devops

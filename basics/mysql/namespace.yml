@@ -1,0 +1,8 @@
+
+# this is our namespace file for the mysql statefulset
+
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: mysql
+
