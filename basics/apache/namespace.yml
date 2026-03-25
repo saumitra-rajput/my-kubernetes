@@ -1,0 +1,7 @@
+# this is Namespace file for httpd
+
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: apache
+
