@@ -1,0 +1,19 @@
+# this is pod file for testing taints and tolerations
+
+kind: Pod
+apiVersion: v1
+metadata:
+  name: test-pod
+  namespace: nginx
+
+spec:
+  containers:
+    - name: podginx
+      image: nginx:latest
+      ports:
+      - containerPort: 80
+  tolerations:
+    - key: "prod"
+      operator: "Equal"
+      value: "true"
+      effect: "NoSchedule"

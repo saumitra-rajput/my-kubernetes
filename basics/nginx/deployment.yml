@@ -1,4 +1,5 @@
-# this is our first deployment manifest file
+#
+#this is our first deployment manifest file
 
 kind: Deployment
 apiVersion: apps/v1
@@ -24,6 +25,14 @@ spec:
           image: nginx:latest
           ports:
             - containerPort: 80
+          resources:
+            requests:
+              cpu: 100m
+              memory: 110Mi
+            limits:
+              cpu: 150m
+              memory: 200Mi
+
           volumeMounts:
             - mountPath: /var/www/html
               name: nginx-volume

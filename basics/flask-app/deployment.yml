@@ -20,4 +20,13 @@ spec:
         image: saumitrarajput/flask-app:0.1
         ports:
         - containerPort: 5000
+        livenessProbe: 
+          httpGet:
+            path: /
+            port: 5000
+        readinessProbe:
+          httpGet: 
+            path: /
+            port: 5000     
+
 
