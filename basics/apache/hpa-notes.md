@@ -1,5 +1,21 @@
 # Apache HPA on Kubernetes — Commands Reference
 
+## config metrics server on kind [link](https://github.com/LondheShubham153/kubestarter/tree/main/HPA_VPA)
+
+
+- kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+- kubectl -n kube-system edit deployment metrics-server
+  - Add the security bypass to deployment under container.args
+    - --kubelet-insecure-tls
+    - --kubelet-preferred-address-types=InternalIP,Hostname,ExternalIP
+
+- kubectl -n kube-system rollout restart deployment metrics-server
+- kubectl get pods -n kube-system
+- kubectl top nodes
+- kubectl top pods
+- kubectl top pods -n nginx
+
+
 ## 1. Deploy Apache Stack
 
 ```bash

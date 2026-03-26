@@ -1,0 +1,25 @@
+# this is our HPA file for flask-app
+
+kind: HorizontalPodAutoscaler
+apiVersion: autoscaling/v2
+metadata:
+  name: flask-hpa
+  namespace: nginx
+spec:
+  scaleTargetRef:
+    kind: Deployment
+    name: flask-dep
+    apiVersion: apps/v1
+
+  minReplicas: 1
+  maxReplicas: 5
+
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 3
+
+
