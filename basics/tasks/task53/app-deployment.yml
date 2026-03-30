@@ -1,0 +1,25 @@
+# this is manifest file for depolyment
+
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: mydep
+  namespace: task
+  labels:
+    app: web-app
+
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: web-app
+  template:
+    metadata:
+      labels:
+        app: web-app
+    spec:
+      containers:
+        - name: web-cont
+          image: nginx:latest
+          ports:
+            - containerPort: 80

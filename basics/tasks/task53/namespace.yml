@@ -1,0 +1,8 @@
+# this is Namespace manifest file
+
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: task
+
+

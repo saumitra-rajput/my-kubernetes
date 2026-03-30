@@ -1,0 +1,16 @@
+# this if manifest file for service
+
+kind: Service
+apiVersion: v1
+metadata: 
+  name: app-service
+  namespace: task
+
+spec:
+  type: ClusterIP
+  selector:
+      app: web-app
+  ports:
+    - protocol: TCP
+      port: 8081 # user will see the app on this port
+      targetPort: 80 # port of the pods
