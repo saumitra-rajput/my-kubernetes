@@ -147,10 +147,11 @@ Workflow to follow
 - kubectl get all -n nginx
 
 
+
 ## port mapping
 
 - kubectl port-forward service/nginx-service -n nginx 8080:80 --address=0.0.0.0  # i have used port 8080 is non-privlage port
 - ctrl + c # once you hit these key port forwarding will be stop and webpage is gone
 
-
+Note: Port-forward always uses the Service port, never the nodePort.
 
