@@ -1,0 +1,16 @@
+# this is manifest file for service type :loadbalancer 
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: mylb
+  namespace: task
+
+spec:
+  type: LoadBalancer
+  selector:
+    app: web-app
+  ports:
+    - port: 8081
+      targetPort: 80
+
